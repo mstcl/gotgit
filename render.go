@@ -74,27 +74,21 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() string {
 	var s string
-
 	if m.quitting {
 		s += "Goodbye!"
 	} else {
 		s += m.spinner.View() + " Getting repositories..."
 	}
-
 	s += "\n\n"
-
 	for _, res := range m.results {
 		s += res.String() + "\n"
 	}
-
 	if !m.quitting {
 		s += helpStyle.Render("Press any key to exit")
 	}
-
 	if m.quitting {
 		s += "\n"
 	}
-
 	return appStyle.Render(s)
 }
 
