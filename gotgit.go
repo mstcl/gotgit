@@ -1,4 +1,4 @@
-// Package gotgit is the main thang
+// Display information of your repositories
 package main
 
 import (
@@ -117,7 +117,6 @@ func getRepos(dirsSorted []string) []repo {
 		dirSlc := strings.Split(dirsSorted[idx], "/")
 		// path := strings.Join([]string{"~", strings.Join(dirSlc[3:], "/")}, "/")
 		name := dirSlc[len(dirSlc)-1]
-		fmt.Println(name)
 		repos[idx] = repo{
 			name:     name,
 			path:     dirsSorted[idx],
